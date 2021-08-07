@@ -1,0 +1,93 @@
+###########spring related properties########################
+server.port=9090
+###########spring related properties########################
+
+###########rabbit connection details###################
+spring:
+  application:
+    name: MQ-Bridge
+  rabbitmq:
+    addresses: ec2-52-66-237-234.ap-south-1.compute.amazonaws.com:5672
+    username: mybiz-pubsub
+    password: mybiz-pubsub
+    virtual-host: qa1
+###########rabbit connection details###################
+
+###########queue manager connection details###################
+ibm:
+  mq:
+    queue-manager: QM1
+    channel: DEV.ADMIN.SVRCONN
+    conn-name: ec2-52-66-237-234.ap-south-1.compute.amazonaws.com(1414)
+    user: admin
+    password: passw0rd
+    pool:
+      enabled: true
+###########queue manager connection details###################
+
+###########connection poooling properties A #####################
+mq:
+  a:
+    ibm:
+      mq:
+        pool:
+          enabled: true
+          max-connections: 10 
+          idle-timeout: 10000
+          max-sessions-per-connection: 10 
+          block-if-full: true
+          #block-if-full-timeout: 
+          exponential-backoff: true 
+          reconnect-interval: 1000 
+          multiplier: 2.0
+          max-interval: 6000
+          concurrency: 1-10
+###########connection poooling properties#####################
+
+###########connection poooling properties B #####################
+mq:
+  b:
+    ibm:
+      mq:
+        pool:
+          enabled: true
+          max-connections: 10 
+          idle-timeout: 10000
+          max-sessions-per-connection: 10 
+          block-if-full: true
+          #block-if-full-timeout: 
+          exponential-backoff: true 
+          reconnect-interval: 1000 
+          multiplier: 2.0
+          max-interval: 6000
+          concurrency: 1-10
+###########connection poooling properties#####################
+
+###########connection poooling properties C #####################
+mq:
+  c:
+    ibm:
+      mq:
+        pool:
+          enabled: true
+          max-connections: 10 
+          idle-timeout: 10000
+          max-sessions-per-connection: 10 
+          block-if-full: true
+          #block-if-full-timeout: 
+          exponential-backoff: true 
+          reconnect-interval: 1000 
+          multiplier: 2.0
+          max-interval: 6000
+          concurrency: 1-10
+###########connection poooling properties#####################
+
+###########App properties##################################
+mq-bridge.rabbit.listener.auto-startup=false
+mq-bridge.rabbit.listener.concurrency=1-2
+###########App properties##################################
+#spring.logstash.url=http://localhost:5000
+#spring.sleuth.enabled=true
+#spring.zipkin.enabled=true
+#spring.zipkin.base-url=http://ec2-52-66-237-234.ap-south-1.compute.amazonaws.com:9411
+#spring.sleuth.messaging.jms.enabled=true

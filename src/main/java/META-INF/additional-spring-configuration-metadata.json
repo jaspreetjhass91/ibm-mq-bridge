@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "mq.A.ibm.mq.pool.idle-timeout",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.A.ibm.mq.pool.idle-timeout'"
+  },
+  {
+    "name": "mq.A.ibm.mq.pool.max-connections",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.A.ibm.mq.pool.max-connections'"
+  },
+  {
+    "name": "mq.A.ibm.mq.pool.max-connections",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.A.ibm.mq.pool.max-connections'"
+  },
+  {
+    "name": "mq.b.ibm.mq.pool.concurrency",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.b.ibm.mq.pool.concurrency'"
+  },
+  {
+    "name": "mq.c.ibm.mq.pool.concurrency",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.c.ibm.mq.pool.concurrency'"
+  },
+  {
+    "name": "mq.a.ibm.mq.pool.concurrency",
+    "type": "java.lang.String",
+    "description": "A description for 'mq.a.ibm.mq.pool.concurrency'"
+  }
+]}

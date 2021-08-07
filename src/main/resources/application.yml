@@ -1,0 +1,82 @@
+###########spring related properties########################
+spring:
+  application:
+    name: mq-bridge
+    
+server.port: 0
+###########spring related properties########################
+
+###########rabbit connection details###################
+rabbit:
+  mq:
+    connection-properties:
+      addresses: ec2-13-233-146-34.ap-south-1.compute.amazonaws.com:5672
+      virtual-host: dev-host
+      user: mq-admin
+      password: mq-admin
+    queue-a:
+      auto-startup: false 
+      concurrency: 1-10
+    queue-b:
+      auto-startup: false
+      concurrency: 1-10
+    queue-c:
+      auto-startup: false
+      concurrency: 1-10
+###########rabbit connection details###################
+
+###########queue manager connection details###################
+ibm:
+  mq:
+    connection-properties:
+      queue-manager: QM1
+      ibm-m-q-connection-string: ec2-13-233-146-34.ap-south-1.compute.amazonaws.com(1414)
+      user: admin
+      password: passw0rd
+      channel: DEV.ADMIN.SVRCONN
+###########queue manager connection details####################
+
+###########connection pooling properties A start#####################
+    queue-a:
+      enabled: true
+      concurrency: 1-10
+      max-connections: 10
+      max-sessions-per-connection: 10 
+      idle-timeout: 10000
+      block-if-full: true 
+      #block-if-full-timeout: 
+      exponential-backoff: true 
+      reconnect-interval: 1000
+      multiplier: 2.0
+      max-interval: 6000
+###########connection pooling properties A end########################      
+
+###########connection pooling properties B #####################
+    queue-b:
+      enabled: true
+      concurrency: 1-10
+      max-connections: 10
+      max-sessions-per-connection: 10 
+      idle-timeout: 10000
+      block-if-full: true 
+      #block-if-full-timeout: 
+      exponential-backoff: true 
+      reconnect-interval: 1000
+      multiplier: 2.0
+      max-interval: 6000
+###########connection pooling properties B######################
+
+###########connection pooling properties C######################
+    queue-c:
+      enabled: true
+      concurrency: 1-10
+      max-connections: 10
+      max-sessions-per-connection: 10 
+      idle-timeout: 10000
+      block-if-full: true 
+      #block-if-full-timeout: 
+      exponential-backoff: true 
+      reconnect-interval: 1000
+      multiplier: 2.0
+      max-interval: 6000
+###########connection pooling properties C######################
